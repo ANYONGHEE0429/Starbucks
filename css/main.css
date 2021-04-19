@@ -1,0 +1,20 @@
+body {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family:'Naum Gothic' , sans-serif;
+}
+
+
+/* HEADER */
+header {
+    background-color: royalblue;
+
+}
+
+header .inner {
+    background-color: orange;
+}
+header .logo {
+
+}
