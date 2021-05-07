@@ -52,7 +52,19 @@ new Swiper('.notice-line .swiper-container', {
       prevEl: '.promotion .swiper-prev', // 이전 버튼 선택자
       nextEl: '.promotion .swiper-next' // 다음 버튼 선택자
     }
-  })
+  });
+
+  new Swiper('.awards .swiper-container', {
+    autoplay: true,
+    loop: true,
+    spaceBetween: 30,
+    slidesPerView: 5,
+    navigation: {
+      prevEl: '.awards .swiper-prev',
+      nextEl: '.awards .swiper-next'
+    }
+  });
+  
 
 
 const promotion  = document.querySelector('.promotion'); 
@@ -93,3 +105,19 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', 0.5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function(spyEl) {
+  new ScrollMagic
+    .Scene({
+      triggerElement: spyEl, //보여짐 여부를 감시할 요스를 지정
+      triggerHook: .8
+    })
+    .setClassToggle(spyEl, 'show')
+    .addTo(new ScrollMagic.Controller());
+});
+
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
